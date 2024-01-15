@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
 
-jobs:
+jobs:    
   CodeQL-Build:
     runs-on: ubuntu-latest
 
@@ -23,3 +23,7 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
+
+- uses: github/codeql-action/init@v1
+  with:
+    config-file: ./.github/codeql/codeql-config.yml
